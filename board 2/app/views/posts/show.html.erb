@@ -1,0 +1,54 @@
+<%= form_for :post, url: posts_path do |f| %>
+<table style='border:groove 2px #0000ff'>
+<tr>
+<td style='font-size:60px; border:groove 2px #0000ff'>
+<%= f.label :Message %>
+</td>
+<td style='border:groove 2px #0000ff'>
+<%= f.text_field :Message %>
+</td>
+</tr>
+<tr>
+<td style='font-size:60px;border:groove 2px #0000ff'>
+<center>
+<%= f.label :Name %>
+</center>
+</td>
+<td style='border:groove 2px #0000ff; column-width:400px'>
+<center>
+<%= f.text_field :Name %>
+</center>
+</td>
+</tr>
+<tr>
+<td style='font-size:60px; border:groove 2px #0000ff'>
+<center>
+<%= f.label :Email %>
+</center>
+</td>
+<td style='border:groove 2px #0000ff'>
+<%= f.text_field :Email %>
+</td>
+</tr>
+
+</table>
+<div style='padding-left: 250px'>
+<%= f.submit %>
+</div>
+<% end %>
+
+<table style='border:groove 2px #0000ff'>
+<% @posts.each do |post| %>
+<tr>
+<td style='border:groove 2px #0000ff'>
+<%= post.Message %>
+</td>
+</tr>
+<tr>
+<td style='border:groove 2px #0000ff'> <b>by</b> <%= post.Name %> </td>
+<td style='border:groove 2px #0000ff'> <b>email</b> <%= post.Email %> </td>
+<td style='border:groove 2px #0000ff'> <%= post.created_at %> </td> 
+</tr>
+
+<% end %>
+</table>
